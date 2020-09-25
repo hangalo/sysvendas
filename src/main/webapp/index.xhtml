@@ -2,78 +2,79 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+       xmlns:ng="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:b="http://bootsfaces.net/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Mirangolo Sales - Sistema de vendas</title>
     </h:head>
     <h:body>
-        
-        <f:view>
+
+        <b:navBar brand="MS - Sistema de Vendas" brandHref="#" fluid="true">
+            <b:navbarLinks>
+                <b:dropMenu value="Artigos" iconAwesome="birthday-cake">
+                    <b:navLink value="Todos" href="lista-produtos.jsf"></b:navLink>
+                    <b:navLink value="Artigos por nome" href="#"></b:navLink>
+                    <b:navLink value="Filtro de artigos" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Nav header"></b:navLink>
+                    <b:navLink value="Separated link" href="#"></b:navLink>
+                    <b:dropMenu value="Nested submenu" iconAwesome="birthday-cake" iconAlign="right">
+                        <b:navLink value="You can nest menus" href="#"></b:navLink>
+                        <b:dropMenu value="Nested sub-submenu">
+                            <b:navLink value="... as deep as ..." href="#"></b:navLink>
+                            <b:dropMenu value="Nested sub-sub-submenu">
+                                <b:navLink value="... you want!" href="#"></b:navLink>
+                            </b:dropMenu>
+                        </b:dropMenu>
+
+                    </b:dropMenu>
+                    <b:navLink value="One more separated link" href="#"></b:navLink>
+                </b:dropMenu>
+               
+                <b:navLink value="Link" href="#"></b:navLink>
+                <b:dropMenu value="Dropdown" iconAwesome="birthday-cake">
+                    <b:navLink value="Action" href="#"></b:navLink>
+                    <b:navLink value="Another action" href="#"></b:navLink>
+                    <b:navLink value="Something else here" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Nav header"></b:navLink>
+                    <b:navLink value="Separated link" href="#"></b:navLink>
+                    <b:dropMenu value="Nested submenu" iconAwesome="birthday-cake" iconAlign="right">
+                        <b:navLink value="You can nest menus" href="#"></b:navLink>
+                        <b:dropMenu value="Nested sub-submenu">
+                            <b:navLink value="... as deep as ..." href="#"></b:navLink>
+                            <b:dropMenu value="Nested sub-sub-submenu">
+                                <b:navLink value="... you want!" href="#"></b:navLink>
+                            </b:dropMenu>
+                        </b:dropMenu>
+
+                    </b:dropMenu>
+                    <b:navLink value="One more separated link" href="#"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+            <form class="navbar-form navbar-left hidden-md hidden-sm hidden-xs" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" ng:placeholder="Search"/>
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <!-- Following line is needed for TBS 3.0.1 (panel content overflow issue) -->
+            <b:navbarLinks pull="right"><b:navLink value="    " href="#"></b:navLink></b:navbarLinks>
+            <b:navbarLinks pull="right" styleClass="hidden-xs">
+                <b:navLink value="Link" href="#"></b:navLink>
+                <b:dropMenu value="Dropdown">
+                    <b:navLink value="Action" href="#"></b:navLink>
+                    <b:navLink value="Another action" href="#"></b:navLink>
+                    <b:navLink value="Something else here" href="#"></b:navLink>
+                    <b:navLink></b:navLink>
+                    <b:navLink header="Nav header"></b:navLink>
+                    <b:navLink value="Separated link" href="#"></b:navLink>
+                    <b:navLink value="One more separated link" href="#"></b:navLink>
+                </b:dropMenu>
+            </b:navbarLinks>
+        </b:navBar>
 
 
-            <h:form>
-                <h1><h:outputText value="List"/></h1>
-                <h:dataTable value="#{artigoBean.artigos}" var="item">
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="IdArtigo"/>
-                        </f:facet>
-                        <h:outputText value="#{item.idArtigo}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="CodigoBarraArtigo"/>
-                        </f:facet>
-                        <h:outputText value="#{item.codigoBarraArtigo}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="CodigoComercialArtigo"/>
-                        </f:facet>
-                        <h:outputText value="#{item.codigoComercialArtigo}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="NomeArtigo"/>
-                        </f:facet>
-                        <h:outputText value="#{item.nomeArtigo}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="PrecoArtigo"/>
-                        </f:facet>
-                        <h:outputText value="#{item.precoArtigo}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Existencias"/>
-                        </f:facet>
-                        <h:outputText value="#{item.existencias}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="Disponivel"/>
-                        </f:facet>
-                        <h:outputText value="#{item.disponivel}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="IdCategoriaArtigo"/>
-                        </f:facet>
-                        <h:outputText value="#{item.idCategoriaArtigo}"/>
-                    </h:column>
-                    <h:column>
-                        <f:facet name="header">
-                            <h:outputText value="IdSeccao"/>
-                        </f:facet>
-                        <h:outputText value="#{item.idSeccao}"/>
-                    </h:column>
-                </h:dataTable>
-            </h:form>
-        </f:view>
-
-        
-        
     </h:body>
 </html>
 
