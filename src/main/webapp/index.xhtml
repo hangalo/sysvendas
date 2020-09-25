@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="List"/></h1>
+                <h:dataTable value="#{artigoBean.artigos}" var="item">
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="IdArtigo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idArtigo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="CodigoBarraArtigo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.codigoBarraArtigo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="CodigoComercialArtigo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.codigoComercialArtigo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="NomeArtigo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.nomeArtigo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="PrecoArtigo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.precoArtigo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Existencias"/>
+                        </f:facet>
+                        <h:outputText value="#{item.existencias}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="Disponivel"/>
+                        </f:facet>
+                        <h:outputText value="#{item.disponivel}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="IdCategoriaArtigo"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idCategoriaArtigo}"/>
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">
+                            <h:outputText value="IdSeccao"/>
+                        </f:facet>
+                        <h:outputText value="#{item.idSeccao}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+        </f:view>
+
+        
+        
+    </h:body>
+</html>
+
